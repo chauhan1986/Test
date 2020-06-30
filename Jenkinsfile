@@ -10,7 +10,7 @@ pipeline {
         }
         stage("dev"){
             steps {
-                echo "dev"
+                echo "dev helo"
             }
         }
     }
