@@ -11,7 +11,7 @@ pipeline {
       }
       stage('build dev'){
         when {
-          branch 'master'
+          branch 'dev'
         }
         steps{
           echo "hello dev"
@@ -19,7 +19,7 @@ pipeline {
       }
       stage('build qa'){
         when {
-          branch 'master'
+          branch 'qa'
         }
         steps{
           echo "hello qa"
