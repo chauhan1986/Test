@@ -10,7 +10,7 @@ pipeline {
         }
         stage("master"){
             steps {
-                sh 'echo "Hello Master"' 
+                  echo "hello" 
             }
         }
     }
