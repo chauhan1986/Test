@@ -4,7 +4,7 @@ pipeline {
         DATE = "${env.BUILD_TIMESTAMP}"
     }
     parameters {
-        choice(choices: ['dev', 'qa', 'enterpriseqa', 'production'], description: 'Choose your branch?', name: 'BRANCH')
+        choice(choices: ['dev', 'qa', 'master', 'enterpriseqa', 'production'], description: 'Choose your branch?', name: 'BRANCH')
     }
     
     stages {
