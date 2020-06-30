@@ -8,7 +8,7 @@ pipeline {
                 echo "$BRANCH"
             }
         }
-        stage("master"){
+        stage("hello"){
             steps {
                   echo "hello" 
             }
