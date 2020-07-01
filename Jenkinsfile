@@ -1,11 +1,18 @@
 pipeline {
     agent any
-    environment {
-        DATE = "${env.BUILD_TIMESTAMP}"
+    options {
+        timestamps()
     }
-    parameters {
-        choice(choices: ['dev', 'qa', 'master'], description: 'Choose your branch?', name: 'BRANCH')
-    }
+    stages{
+      stage('build master'){
+        when {
+          branch 'master'
+        }
+         stages{
+      stage('build qa'){
+        when {
+          branch 'qa'
+        } 
     
     stages {
         stage(Githubclone){
