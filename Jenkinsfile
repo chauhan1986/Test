@@ -14,7 +14,7 @@ pipeline {
        
         stage("mvn"){
            steps {
-           sh 'echo "master"'
+           sh 'echo "$BRANCH"'
            }
         }
     }
