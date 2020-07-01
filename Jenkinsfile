@@ -1,29 +1,17 @@
 pipeline {
     agent any
-    stages{
-      stage('build master'){
-        when {
-          branch 'master'
-        }
-        steps{
-          echo "hello master"
-        }
-      }
-      stage('build dev'){
-        when {
-          branch 'dev'
-        }
-        steps{
-          echo "hello dev"
-        }
-      }
-      stage('build qa'){
-        when {
-          branch 'qa'
-        }
-        steps{
-          echo "hello qa"
-        }
-      }
+    environment {
+        DATE = "${env.BUILD_TIMESTAMP}"
     }
-}
+    parameters {
+        choice(choices: ['dev', 'qa', 'enterpriseqa', 'production'], description: 'Choose your branch?', name: 'BRANCH')
+    }
+    
+    stages {
+        stagese(gitclone){
+            step {
+                sh 'echo "$BRANCH"' 
+            }
+        }
+    }
+}    
