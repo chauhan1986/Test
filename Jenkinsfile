@@ -8,9 +8,9 @@ pipeline {
     }
     
     stages {
-        stage(build){
+        stage(Githubclone){
             steps {
-                sh 'echo "hello"' 
+                sh 'echo "$BRANCH"' 
             }
         }
     }
