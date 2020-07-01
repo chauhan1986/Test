@@ -8,7 +8,7 @@ pipeline {
     }
     
     stages {
-        stage(gitclone){
+        stage(gitclone "$BRANCH"){
             steps {
                 sh 'echo "$BRANCH"' 
             }
