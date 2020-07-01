@@ -14,7 +14,9 @@ pipeline {
        
         stage("mvn"){
            steps {
-           sh 'echo "$BRANCH"'
+           def mavenHome =  tool name: "mvn", type: "maven"
+           def mavenCMD = "${mavenHome}/bin/mvn"
+           sh "${mavenCMD} clean package"
            }
         }
     }
